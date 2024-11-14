@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,74 +30,5 @@
 </html>
 
 
- -->
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Embedding</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.9/dist/quicksight-embedding-js-sdk.min.js"></script>
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-5">QuickSight Dashboards</h1>
-        <div class="row">
-            <!-- Dashboard 1 -->
-            <div class="col-md-4 mb-4">
-                <h4 class="text-center">Orders Dashboard</h4>
-                <div id="dashboardContainer1" style="height: 500px;"></div>
-            </div>
 
-            <!-- Dashboard 2 -->
-            <div class="col-md-4 mb-4">
-                <h4 class="text-center">Dashboard 2</h4>
-                <div id="dashboardContainer2" style="height: 500px;"></div>
-            </div>
-
-            <!-- Dashboard 3 -->
-            <div class="col-md-4 mb-4">
-                <h4 class="text-center">Dashboard 3</h4>
-                <div id="dashboardContainer3" style="height: 500px;"></div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Authentication and embedding logic for all dashboards
-        const embedUrl1 = "https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/483a659d-6287-4952-baa2-108a23abe50f?directory_alias=sharang-kapsikar";
-        const embedUrl2 = "https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/4e51e0e4-63fd-4842-afd5-bf363be7fa4a?directory_alias=sharang-kapsikar";
-        const embedUrl3 = "https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/fcbb640f-3ba2-4a8c-a945-47a9a38a8bc5?directory_alias=sharang-kapsikar";
-
-        const containerDiv1 = document.getElementById("dashboardContainer1");
-        const containerDiv2 = document.getElementById("dashboardContainer2");
-        const containerDiv3 = document.getElementById("dashboardContainer3");
-
-        // Use the QuickSight SDK to embed the dashboards with authentication
-        function embedDashboard(embedUrl, containerDiv) {
-            const options = {
-                url: embedUrl,
-                container: containerDiv,
-                height: "100%",
-                width: "100%",
-                locale: "en-US",
-                footerPaddingEnabled: true,
-            };
-
-            QuickSightEmbedding.embedDashboard(options);
-        }
-
-        // Authenticate once and embed all three dashboards
-        window.onload = function() {
-            embedDashboard(embedUrl1, containerDiv1);
-            embedDashboard(embedUrl2, containerDiv2);
-            embedDashboard(embedUrl3, containerDiv3);
-        };
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+ 
