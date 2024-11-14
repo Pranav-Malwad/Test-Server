@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed QuickSight Dashboard</title>
+    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.9/dist/quicksight-embedding-js-sdk.min.js"></script>
+</head>
+<body>
+    <div id="dashboardContainer" style="height: 800px;"></div>
+    <script>
+        const containerDiv = document.getElementById("dashboardContainer");
+        const dashboardId = "483a659d-6287-4952-baa2-108a23abe50f"; // Replace with your dashboard ID
+        const embedUrl = "https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/483a659d-6287-4952-baa2-108a23abe50f?directory_alias=sharang-kapsikar"; // Replace with the generated embed URL
+        const identityRegion = "us-east-1"; // Replace with your AWS region
+
+        const options = {
+            url: embedUrl,
+            container: containerDiv,
+            height: "800px",
+            width: "100%",
+            locale: "en-US",
+            footerPaddingEnabled: true,
+        };
+
+        QuickSightEmbedding.embedDashboard(options);
+    </script>
+</body>
+</html>
