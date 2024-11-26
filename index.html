@@ -42,7 +42,7 @@
     <title>Embed QuickSight Dashboards</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.9/dist/quicksight-embedding-js-sdk.min.js"></script>
 </head>
@@ -60,13 +60,6 @@
             </li>
         </ul>
         <div class="tab-content" id="dashboardTabsContent">
-            <div class="tab-pane fade show active" id="quotes" role="tabpanel" aria-labelledby="quotes-tab">
-                <iframe
-                    width="960"
-                    height="720"
-                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/483a659d-6287-4952-baa2-108a23abe50f?directory_alias=sharang-kapsikar">
-                </iframe>
-            </div>
             <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
                 <iframe
                     width="960"
@@ -74,6 +67,14 @@
                     src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/fcbb640f-3ba2-4a8c-a945-47a9a38a8bc5?directory_alias=sharang-kapsikar">
                 </iframe>
             </div>
+            <div class="tab-pane fade show active" id="quotes" role="tabpanel" aria-labelledby="quotes-tab">
+                <iframe
+                    width="960"
+                    height="720"
+                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/483a659d-6287-4952-baa2-108a23abe50f?directory_alias=sharang-kapsikar">
+                </iframe>
+            </div>
+            
             <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
                 <iframe
                     width="960"
