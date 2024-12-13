@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -50,43 +50,86 @@
     </div>
 </body>
 </html>
-<!-- 
-<!DOCTYPE html>
+ -->
+
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickSight Embed</title>
-  <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.9/dist/quicksight-embedding-js-sdk.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed QuickSight Dashboards</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.9/dist/quicksight-embedding-js-sdk.min.js"></script>
 </head>
 <body>
-  <h1>Embed QuickSight Dashboard</h1>
-  <div id="dashboardContainer" style="width: 100%; height: 600px;"></div>
-
-  <script>
-    // Function to fetch the embed URL from the backend
-    function fetchEmbedUrl() {
-      fetch('http://localhost:3000/getDashboardEmbedUrl')
-        .then(response => response.json())
-        .then(data => {
-          // Embed the QuickSight dashboard into the container
-          const options = {
-            url: data.embedUrl,
-            container: document.getElementById('dashboardContainer'),
-            height: "600px",
-            width: "100%",
-            locale: "en-US",
-            footerPaddingEnabled: true,
-          };
-          QuickSightEmbedding.embedDashboard(options);
-        })
-        .catch(error => console.error('Error fetching the dashboard embed URL:', error));
-    }
-
-    // Call the function to embed the dashboard
-    window.onload = function() {
-      fetchEmbedUrl();  // Fetch and embed the QuickSight dashboard on page load
-    };
-  </script>
+    <div class="">
+        <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="quotes-tab" data-toggle="tab" href="#quotes" role="tab" aria-controls="quotes" aria-selected="true">Quotes Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false">Orders Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="registration-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="false">Registration Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="consoleated-tab" data-toggle="tab" href="#consoleated" role="tab" aria-controls="consoleated" aria-selected="false">Consoleated Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="leads-tab" data-toggle="tab" href="#leads" role="tab" aria-controls="leads" aria-selected="false">Leads Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="supply-chain-tab" data-toggle="tab" href="#supply-chain" role="tab" aria-controls="supply-chain" aria-selected="false">Supply Chain Dashboard</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="dashboardTabsContent">
+            <div class="tab-pane fade show active" id="quotes" role="tabpanel" aria-labelledby="quotes-tab">
+                <iframe
+                    width="100%"
+                    height="800"
+                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/fcbb640f-3ba2-4a8c-a945-47a9a38a8bc5?directory_alias=sharang-kapsikar">
+                </iframe>
+            </div>
+            <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                <iframe
+                    width="100%"
+                    height="800"
+                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/483a659d-6287-4952-baa2-108a23abe50f?directory_alias=sharang-kapsikar">
+                </iframe>
+            </div>
+            <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
+                <iframe
+                    width="100%"
+                    height="800"
+                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/4e51e0e4-63fd-4842-afd5-bf363be7fa4a?directory_alias=sharang-kapsikar">
+                </iframe>
+            </div>
+            <div class="tab-pane fade" id="consoleated" role="tabpanel" aria-labelledby="consoleated-tab">
+                <iframe
+                    width="100%"
+                    height="800"
+                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/030e4574-c8d7-4026-b9f9-a3a45c4a8d26?directory_alias=sharang-kapsikar">
+                </iframe>
+            </div>
+            <div class="tab-pane fade" id="leads" role="tabpanel" aria-labelledby="leads-tab">
+                <iframe
+                    width="100%"
+                    height="800"
+                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/2ec349da-2cc1-4d35-90a3-cce33ec36a6f?directory_alias=sharang-kapsikar">
+                </iframe>
+            </div>
+            <div class="tab-pane fade" id="supply-chain" role="tabpanel" aria-labelledby="supply-chain-tab">
+                <iframe
+                    width="100%"
+                    height="800"
+                    src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/332633661915/dashboards/d20db853-aa25-4d0a-8b98-40cb5b7f674e?directory_alias=sharang-kapsikar">
+                </iframe>
+            </div>
+        </div>
+    </div>
 </body>
-</html> -->
+</html>
